@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/*Main colors that were used*/
 :root {
     --primary-color: #333333;
     --secondary-color: rgb(20, 143, 20);
@@ -17,6 +18,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-image: url(../assets/texture-bgi.jpg);
+    background-attachment: fixed;
 
 }
 
@@ -46,7 +48,12 @@ nav ul li a {
 nav ul li a:hover {
     color: rgb(0, 182, 0);
     text-decoration: underline;
+    transform: scale(1.9);
+    text-shadow: 3px 1px 5px rgb(11, 128, 11);
 }
+
+
+/*Here starts the main section*/
 
 main {
     padding: 1.25rem;
@@ -55,11 +62,19 @@ main {
     align-items: center;
 }
 
-/* .grid-container {
+.description {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-} */
+    flex-direction: column;
+    align-items: center;
+    color: var(--tertiary-color);
+    background-color: rgb(1, 128, 15);
+    margin-bottom: 1.25rem;
+    border-radius: 2vw;
+    padding: 2vw;
+    background: linear-gradient(180deg, rgba(246, 255, 0, 0), rgba(0, 0, 0, 1));
+        box-shadow: 0px 0px 15px #39FF14,        
+        0px 0px 15px black  inset;
+}
 
 .grid-item {
     background-color: #f4f4f4;
@@ -71,8 +86,8 @@ main {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 2.5rem;
-    box-shadow: 0px 0px 15px #39FF14,
-    0px 0px 15px #86f872 inset;
+    box-shadow: 0px 0px 15px #7b8978;
+    /* 0px 0px 15px #86f872 inset; */
 }
 
 .grid-item img {
@@ -81,7 +96,6 @@ main {
     border-radius: 2rem;
     transition: .1s ease-in;
     filter: grayscale(75%);
-
 }
 
 .grid-item img:hover {
@@ -96,7 +110,7 @@ main {
 }
 
 .grid-container h3 {
-    text-shadow: 2px 3px 6px cyan;
+    text-shadow: 2px 3px 6px black;
 }
 
 .t-shirts {
@@ -114,15 +128,17 @@ main {
     grid-template-columns: repeat(1, 1fr);
     gap: 5%;
     box-sizing: border-box;
-    border: 2.5px solid cyan;
-    box-shadow: 0px 0px 15px #39FF14,        
+    border: 2px solid cyan;
+    box-shadow: 0px 0px 15px black,        
         0px 0px 15px #39FF14 inset;
     border-radius: 1.25rem;
     padding: 3.25rem;
     background: linear-gradient(180deg, rgba(246, 255, 0, 0), rgba(0, 0, 0, 1));
-    backdrop-filter: blur(1.3px);
+    backdrop-filter: blur(5px);
 }
 
+
+/*Responsive design*/
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
@@ -157,22 +173,12 @@ main {
 
 }
 
-.description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--tertiary-color);
-    background-color: red;
-    margin-bottom: 1.25rem;
-    border-radius: 2vw;
-    padding: 2vw;
-}
 
-
-
+/*Styles for footer section*/
 footer {
     display: flex;
     justify-content: center;
+    bottom: 0;
     color: var(--tertiary-color);
     background-color: var(--primary-color);
     width: 100%;
